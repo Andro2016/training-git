@@ -1,1416 +1,220 @@
-<!DOCTYPE html>
-<html lang="es">
+ <!--central Banner Promo-->
+        <section class="o-mainBanner">
+            <script>
+                {
+                    window.addEventListener('load', () => {
+                        try {
+                            let endDate = new Date("Mar 30, 2019 23:59:59").getTime();
+                            elDays = document.querySelector(".a-countDown__daysNumber");
+                            elHours = document.querySelector(".a-countDown__hoursNumber");
+                            elMinutes = document.querySelector(".a-countDown__minutesNumber");
+                            elSeconds = document.querySelector(".a-countDown__secondsNumber");
+                            operationsTime = () => {
+                                let nowaday = new Date().getTime();
+                                distanceBetweenDays = endDate - nowaday;
+                                days = Math.floor(distanceBetweenDays / (1000 * 60 * 60 * 24));
+                                hours = Math.floor((distanceBetweenDays % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                minutes = Math.floor((distanceBetweenDays % (1000 * 60 * 60)) / (1000 * 60));
+                                seconds = Math.floor((distanceBetweenDays % (1000 * 60)) / 1000);
+                                if (distanceBetweenDays < 0) {
+                                    clearInterval(engineTime);
+                                    days = 0;
+                                    hours = 0;
+                                    minutes = 0;
+                                    seconds = 0;
+                                }
+                                return {
+                                    "days": days,
+                                    "hours": hours,
+                                    "minutes": minutes,
+                                    "seconds": seconds
+                                }
+                            }
+                            setDataTime = (d, h, m, s) => {
+                                elDays.innerHTML = d < 10 ? "0" + d : d;
+                                elHours.innerHTML = h < 10 ? "0" + h : h;
+                                elMinutes.innerHTML = m < 10 ? "0" + m : m;
+                                elSeconds.innerHTML = s < 10 ? "0" + s : s;
+                            }
+                            runTime = () => {
+                                let dataTime = operationsTime();
+                                setDataTime(dataTime.days, dataTime.hours, dataTime.minutes, dataTime.seconds);
 
-<head>
-    <link rel="stylesheet" href="../assets/lib/OwlCarousel2-2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="../assets/lib/OwlCarousel2-2.3.4/assets/owl.theme.default.min.css">
-    <meta name="description" content="Tienda online con la selección más grande en Moda, Ropa, Zapatos, Línea blanca, Tecnología, Computo, Electrónica, Laptops, Smarthphones, Juguetes, Muebles. Envío Gratis · Click &amp; Collect · Garantía Liverpool.">
-    <meta name="subject" content="Retail">
-    <meta name="distribution" content="Global">
-    <meta name="classification" content="Online Store">
-    <meta property="og:site_name" content="Liverpool">
-    <meta property="og:type" content="Website">
-    <meta charset="UTF-8">
-    <meta http-equiv="content-Type" content="text/html; charset=utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta http-equiv="Expires" content="never">
-    <meta http-equiv="CACHE-CONTROL" content="Private">
-    <meta name="format-detection" content="telephone=no">
-    <meta http-equiv="content-style-type" content="text/css">
-    <!-- Google and Bing Site Verification-->
-    <meta name="google-site-verification" content="ByzU0qiDBnjGIAx7wS45K9XCRUlGKxYhE2o4LZQq73w">
-    <meta name="msvalidate.01" content="735BB16762ECED2B99984525B46B28D4">
-    <!-- Facebook Configuration-->
-    <meta property="fb:admins" content="140142041216">
-    <meta property="fb:page_id" content="https://www.facebook.com/liverpoolmexico">
-    <!-- Viewport-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="apple-itunes-app" content="app-id=1148204349">
-    <meta http-equiv="HandheldFriendly" content="true">
-    <!-- Creator-->
-    <meta name="Publisher" content="Ventas a distancia, Liverpool.">
-    <meta name="Revisit-After" content="1 day">
-    <meta name="author" content="https://www.liverpool.com.mx/">
-    <meta name="DC.Creator" content="Liverpool México">
-    <link rel="stylesheet" type="text/css" href="../assets/lib/bootstrap-4.2.1-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/global.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <title>Liverpool es parte de mi vida</title>
+                            }
+                            let engineTime = setInterval(runTime, 1000);
 
-</head>
-
-<body>
-    <header>
-        <div class="a-overlay overlay d-lg-none"></div>
-        <div class="m-promotions text-center d-none d-lg-block"><img class="a-promotions__banner" id="promotions__banner" src="https://assets.liverpool.com.mx/assets/web/images/targeted_promotions/es/cintillo_suscribete_web_2.jpg" alt=""><a class="a-promotions__btn" id="promotions__btn"><i class="a-promotions__icon icon-hammenu"></i></a></div>
-        <div class="o-header">
-            <div class="o-container__fluid container-fluid">
-                <div class="o-container container p-0">
-                    <div class="m-searchBar">
-                        <div class="o-row row pt-3 pb-3 align-items-center no-gutters">
-                            <div class="o-col col-3 order-1 d-lg-none d-flex">
-                                <button class="a-header__hamburger mobile-menu-action p-0"><i class="icon-hammenu"></i>
-                          </button>
-                                <div class="o-megamenu__mobile d-lg-none">
-                                    <nav class="m-megamenu__menuList">
-                                        <div class="o-container container p-3">
-                                            <ul class="nav-mobile-menu">
-                                                <li class="m-megamenu__section">
-                                                    <div class="m-row row">
-                                                        <div class="m-col col-12"><a class="a-header__navMobileLink -primary-style" href="#">Inicia sesión</a>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <hr>
-                                                <li class="m-megamenu__section">
-                                                    <div class="m-row row">
-                                                        <div class="m-col col-12"><a class="a-header__navMobileLink mobile-category-action" href="#">Departamentos<i class="icon-arrow_right"></i></a>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <hr>
-                                                <li class="m-megamenu__section">
-                                                    <div class="m-row row">
-                                                        <div class="m-col col-12"><a class="a-header__navMobileLink" href="#">Mi crédito</a>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="m-megamenu__section">
-                                                    <div class="m-row row">
-                                                        <div class="m-col col-12"><a class="a-header__navMobileLink" href="#">Mis pedidos</a>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="m-megamenu__section">
-                                                    <div class="m-row row">
-                                                        <div class="m-col col-12"><a class="a-header__navMobileLink" href="#">mesa de regalos</a>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="m-megamenu__section">
-                                                    <div class="m-row row">
-                                                        <div class="m-col col-12"><a class="a-header__navMobileLink" href="#">Mi cuenta</a>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="m-megamenu__section">
-                                                    <div class="m-row row">
-                                                        <div class="m-col col-12"><a class="a-header__navMobileLink" href="#">Localiza tu tienda</a>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="m-megamenu__section">
-                                                    <div class="m-row row">
-                                                        <div class="m-col col-12"><a class="a-header__navMobileLink" href="#">Tiempo aire</a>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <hr>
-                                                <li class="m-megamenu__section">
-                                                    <div class="m-row row">
-                                                        <div class="m-col col-12"><a class="a-header__navMobileLink" href="#">Seguros de auto</a>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="m-megamenu__section">
-                                                    <div class="m-row row">
-                                                        <div class="m-col col-12"><a class="a-header__navMobileLink" href="#">Sorteos</a>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="m-megamenu__section">
-                                                    <div class="m-row row">
-                                                        <div class="m-col col-12"><a class="a-header__navMobileLink" href="#">Facturación electrónica</a>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="m-megamenu__section">
-                                                    <div class="m-row row">
-                                                        <div class="m-col col-12"><a class="a-header__navMobileLink" href="#">Ayuda</a>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <hr>
-                                                <li class="m-megamenu__section">
-                                                    <div class="m-row row">
-                                                        <div class="m-col col-12"><a class="a-header__navMobileLink" href="#"><span class="a-header__navMobileLink mobileLogOut">¿No eres Carmelo? <strong> Salir de aquí</strong></span></a>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                            <ul class="nav-mobile-category d-none">
-                                                <li class="m-megamenu__section">
-                                                    <div class="m-row row">
-                                                        <div class="m-col col-12"><a class="a-header__navMobileLink mobile-subcategory-action" href="#">Departamentos<i class="icon-arrow_left"></i></a>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <hr>
-                                                <li class="m-megamenu__section">
-                                                    <div class="m-row row">
-                                                        <div class="m-col col-12"><a class="a-header__navMobileLink" href="#">Ella</a>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="m-megamenu__section">
-                                                    <div class="m-row row">
-                                                        <div class="m-col col-12"><a class="a-header__navMobileLink" href="#">Él</a>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="m-megamenu__section">
-                                                    <div class="m-row row">
-                                                        <div class="m-col col-12"><a class="a-header__navMobileLink" href="#">Bebés y Niños</a>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="m-megamenu__section">
-                                                    <div class="m-row row">
-                                                        <div class="m-col col-12"><a class="a-header__navMobileLink" href="#">Zapatos</a>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="m-megamenu__section">
-                                                    <div class="m-row row">
-                                                        <div class="m-col col-12"><a class="a-header__navMobileLink" href="#">Belleza</a>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="m-megamenu__section">
-                                                    <div class="m-row row">
-                                                        <div class="m-col col-12"><a class="a-header__navMobileLink" href="#">Relojes, Lentes y Joyería</a>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="m-megamenu__section">
-                                                    <div class="m-row row">
-                                                        <div class="m-col col-12"><a class="a-header__navMobileLink" href="#">Cómputo y Electrónica</a>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="m-megamenu__section">
-                                                    <div class="m-row row">
-                                                        <div class="m-col col-12"><a class="a-header__navMobileLink" href="#">Celulares</a>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="m-megamenu__section">
-                                                    <div class="m-row row">
-                                                        <div class="m-col col-12"><a class="a-header__navMobileLink" href="#">Videojuegos</a>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="m-megamenu__section">
-                                                    <div class="m-row row">
-                                                        <div class="m-col col-12"><a class="a-header__navMobileLink" href="#">Juguetes</a>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="m-megamenu__section">
-                                                    <div class="m-row row">
-                                                        <div class="m-col col-12"><a class="a-header__navMobileLink" href="#">Linea Blanca</a>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="m-megamenu__section">
-                                                    <div class="m-row row">
-                                                        <div class="m-col col-12"><a class="a-header__navMobileLink" href="#">Muebles</a>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="m-megamenu__section">
-                                                    <div class="m-row row">
-                                                        <div class="m-col col-12"><a class="a-header__navMobileLink" href="#">Cocina</a>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </nav>
-                                </div>
-                            </div>
-                            <div class="o-col col-lg-auto col-6 order-2 order-lg-1 text-center">
-                                <a href="#"><img class="a-header__logo" src="../../../assets/images/atomo-icono-liverpool-regular-desktop.svg" alt="Logo Liverpool"></a>
-                            </div>
-                            <div class="o-col col-lg order-4 order-lg-2 pt-2 pt-lg-0">
-                                <div class="m-header__searchBar">
-                                    <div class="input-group">
-                                        <input class="form-control search-bar" type="text" placeholder="'Buscar ..." aria-label="'Buscar ...">
-                                        <div class="input-group-append">
-                                            <button class="input-group-text"><i class="icon-zoom search-icon"></i>
-                                                                              </button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="m-typeahead">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-lg-4 col-12 results">
-                                                <div class="row d-flex d-lg-none">
-                                                    <div class="m-header__searchBarMobile-modal">
-                                                        <div class="row align-items-center no-gutters">
-                                                            <div class="col-auto text-left">
-                                                                <button class="search-bar-mobile-back input-group-text"><i class="icon-back"></i>
-                                                                                          </button>
-                                                            </div>
-                                                            <div class="col text-center pt-2 pb-2">
-                                                                <input class="form-control search-bar-mobile" type="text" placeholder="Buscar ..." aria-label="Buscar ...">
-                                                            </div>
-                                                            <div class="col-auto text-right">
-                                                                <button class="search-bar-mobile-close input-group-text"><i class="icon-close"></i>
-                                                                                          </button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-12">
-                                                        <div class="m-header__searchLinkResult"><a class="a-header__typeaheadLink" href="#">Buscar en <span>Todos los Departamentos</span></a>
-                                                            <hr class="m-0">
-                                                            <a class="a-header__typeaheadLink" href="#"> <strong>xbox</strong>
-                                                                <label>360
-                                                                                                            </label></a>
-                                                            <a class="a-header__typeaheadLink" href="#">
-                                                                <label>consola 
-                                                                                                            </label><strong> xbox</strong></a>
-                                                            <a class="a-header__typeaheadLink" href="#">
-                                                                <strong>XBOX</strong>
-                                                                <label>en 
-                                                                                                            </label><span> Consolas</span></a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-8 col-12">
-                                                <div class="row">
-                                                    <div class="col-12 pt-3 pb-3">
-                                                        <p class="a-typeahead-title">Lo más buscado
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                                <div class="row p-3">
-                                                    <div class="col-lg-6 col-xl col-6">
-                                                        <div class="m-search-suggestion-product mb-3">
-                                                            <a href="#">
-                                                                <figure class="card  m-card"><img src="https://ss261.liverpool.com.mx/sm/1076227209.jpg" alt="Consola Xbox One S 1 TB + Battlefield">
-                                                                    <figcaption class="card-body d-flex flex-column align-items-start">
-                                                                        <p class="a-search-suggestion-title">Consola Xbox One S 1 TB + Battlefield
-                                                                        </p>
-                                                                        <div class="m-compare__products">
-                                                                            <div class="m-checkbox__button mdc-form-field">
-                                                                                <div class="m-checkbox mdc-checkbox">
-                                                                                    <input class="a-checkbox__input mdc-checkbox__native-control" type="checkbox" id="checkbox--2">
-                                                                                    <div class="mdc-checkbox__background">
-                                                                                        <svg class="mdc-checkbox__checkmark a-checkbox__svg" viewbox="0 0 24 24">
-                                                                                                                                                                      <path class="mdc-checkbox__checkmark-path a-checkbox__path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
-                                                                                                                                                                    </svg>
-                                                                                        <div class="mdc-checkbox__mixedmark"></div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <label for="checkbox--2">Comparar
-                                                                                                                                                                </label>
-                                                                            </div>
-                                                                        </div>
-                                                                    </figcaption>
-                                                                </figure>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-6 col-xl col-6">
-                                                        <div class="m-search-suggestion-product mb-3">
-                                                            <a href="#">
-                                                                <figure class="card  m-card"><img src="https://ss261.liverpool.com.mx/sm/1076227209.jpg" alt="Consola Xbox One S 1 TB + Battlefield">
-                                                                    <figcaption class="card-body d-flex flex-column align-items-start">
-                                                                        <p class="a-search-suggestion-title">Consola Xbox One S 1 TB + Battlefield
-                                                                        </p>
-                                                                        <div class="m-compare__products">
-                                                                            <div class="m-checkbox__button mdc-form-field">
-                                                                                <div class="m-checkbox mdc-checkbox">
-                                                                                    <input class="a-checkbox__input mdc-checkbox__native-control" type="checkbox" id="checkbox--2">
-                                                                                    <div class="mdc-checkbox__background">
-                                                                                        <svg class="mdc-checkbox__checkmark a-checkbox__svg" viewbox="0 0 24 24">
-                                                                                                                                                                      <path class="mdc-checkbox__checkmark-path a-checkbox__path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
-                                                                                                                                                                    </svg>
-                                                                                        <div class="mdc-checkbox__mixedmark"></div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <label for="checkbox--2">Comparar
-                                                                                                                                                                </label>
-                                                                            </div>
-                                                                        </div>
-                                                                    </figcaption>
-                                                                </figure>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-6 col-xl col-6">
-                                                        <div class="m-search-suggestion-product mb-3">
-                                                            <a href="#">
-                                                                <figure class="card  m-card"><img src="https://ss261.liverpool.com.mx/sm/1076227209.jpg" alt="Consola Xbox One S 1 TB + Battlefield">
-                                                                    <figcaption class="card-body d-flex flex-column align-items-start">
-                                                                        <p class="a-search-suggestion-title">Consola Xbox One S 1 TB + Battlefield
-                                                                        </p>
-                                                                        <div class="m-compare__products">
-                                                                            <div class="m-checkbox__button mdc-form-field">
-                                                                                <div class="m-checkbox mdc-checkbox">
-                                                                                    <input class="a-checkbox__input mdc-checkbox__native-control" type="checkbox" id="checkbox--2">
-                                                                                    <div class="mdc-checkbox__background">
-                                                                                        <svg class="mdc-checkbox__checkmark a-checkbox__svg" viewbox="0 0 24 24">
-                                                                                                                                                                      <path class="mdc-checkbox__checkmark-path a-checkbox__path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
-                                                                                                                                                                    </svg>
-                                                                                        <div class="mdc-checkbox__mixedmark"></div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <label for="checkbox--2">Comparar
-                                                                                                                                                                </label>
-                                                                            </div>
-                                                                        </div>
-                                                                    </figcaption>
-                                                                </figure>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-6 col-xl col-6">
-                                                        <div class="m-search-suggestion-product mb-3">
-                                                            <a href="#">
-                                                                <figure class="card  m-card"><img src="https://ss261.liverpool.com.mx/sm/1076227209.jpg" alt="Consola Xbox One S 1 TB + Battlefield">
-                                                                    <figcaption class="card-body d-flex flex-column align-items-start">
-                                                                        <p class="a-search-suggestion-title">Consola Xbox One S 1 TB + Battlefield
-                                                                        </p>
-                                                                        <div class="m-compare__products">
-                                                                            <div class="m-checkbox__button mdc-form-field">
-                                                                                <div class="m-checkbox mdc-checkbox">
-                                                                                    <input class="a-checkbox__input mdc-checkbox__native-control" type="checkbox" id="checkbox--2">
-                                                                                    <div class="mdc-checkbox__background">
-                                                                                        <svg class="mdc-checkbox__checkmark a-checkbox__svg" viewbox="0 0 24 24">
-                                                                                                                                                                      <path class="mdc-checkbox__checkmark-path a-checkbox__path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
-                                                                                                                                                                    </svg>
-                                                                                        <div class="mdc-checkbox__mixedmark"></div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <label for="checkbox--2">Comparar
-                                                                                                                                                                </label>
-                                                                            </div>
-                                                                        </div>
-                                                                    </figcaption>
-                                                                </figure>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-6 col-xl col-6">
-                                                        <div class="m-search-suggestion-product mb-3">
-                                                            <a href="#">
-                                                                <figure class="card  m-card"><img src="https://ss261.liverpool.com.mx/sm/1076227209.jpg" alt="Consola Xbox One S 1 TB + Battlefield">
-                                                                    <figcaption class="card-body d-flex flex-column align-items-start">
-                                                                        <p class="a-search-suggestion-title">Consola Xbox One S 1 TB + Battlefield
-                                                                        </p>
-                                                                        <div class="m-compare__products">
-                                                                            <div class="m-checkbox__button mdc-form-field">
-                                                                                <div class="m-checkbox mdc-checkbox">
-                                                                                    <input class="a-checkbox__input mdc-checkbox__native-control" type="checkbox" id="checkbox--2">
-                                                                                    <div class="mdc-checkbox__background">
-                                                                                        <svg class="mdc-checkbox__checkmark a-checkbox__svg" viewbox="0 0 24 24">
-                                                                                                                                                                      <path class="mdc-checkbox__checkmark-path a-checkbox__path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
-                                                                                                                                                                    </svg>
-                                                                                        <div class="mdc-checkbox__mixedmark"></div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <label for="checkbox--2">Comparar
-                                                                                                                                                                </label>
-                                                                            </div>
-                                                                        </div>
-                                                                    </figcaption>
-                                                                </figure>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-6 col-xl col-6">
-                                                        <div class="m-search-suggestion-product mb-3">
-                                                            <a href="#">
-                                                                <figure class="card  m-card"><img src="https://ss261.liverpool.com.mx/sm/1076227209.jpg" alt="Consola Xbox One S 1 TB + Battlefield">
-                                                                    <figcaption class="card-body d-flex flex-column align-items-start">
-                                                                        <p class="a-search-suggestion-title">Consola Xbox One S 1 TB + Battlefield
-                                                                        </p>
-                                                                        <div class="m-compare__products">
-                                                                            <div class="m-checkbox__button mdc-form-field">
-                                                                                <div class="m-checkbox mdc-checkbox">
-                                                                                    <input class="a-checkbox__input mdc-checkbox__native-control" type="checkbox" id="checkbox--2">
-                                                                                    <div class="mdc-checkbox__background">
-                                                                                        <svg class="mdc-checkbox__checkmark a-checkbox__svg" viewbox="0 0 24 24">
-                                                                                                                                                                      <path class="mdc-checkbox__checkmark-path a-checkbox__path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
-                                                                                                                                                                    </svg>
-                                                                                        <div class="mdc-checkbox__mixedmark"></div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <label for="checkbox--2">Comparar
-                                                                                                                                                                </label>
-                                                                            </div>
-                                                                        </div>
-                                                                    </figcaption>
-                                                                </figure>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-6 col-xl col-6">
-                                                        <div class="m-search-suggestion-product mb-3">
-                                                            <a href="#">
-                                                                <figure class="card  m-card"><img src="https://ss261.liverpool.com.mx/sm/1076227209.jpg" alt="Consola Xbox One S 1 TB + Battlefield">
-                                                                    <figcaption class="card-body d-flex flex-column align-items-start">
-                                                                        <p class="a-search-suggestion-title">Consola Xbox One S 1 TB + Battlefield
-                                                                        </p>
-                                                                        <div class="m-compare__products">
-                                                                            <div class="m-checkbox__button mdc-form-field">
-                                                                                <div class="m-checkbox mdc-checkbox">
-                                                                                    <input class="a-checkbox__input mdc-checkbox__native-control" type="checkbox" id="checkbox--2">
-                                                                                    <div class="mdc-checkbox__background">
-                                                                                        <svg class="mdc-checkbox__checkmark a-checkbox__svg" viewbox="0 0 24 24">
-                                                                                                                                                                      <path class="mdc-checkbox__checkmark-path a-checkbox__path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
-                                                                                                                                                                    </svg>
-                                                                                        <div class="mdc-checkbox__mixedmark"></div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <label for="checkbox--2">Comparar
-                                                                                                                                                                </label>
-                                                                            </div>
-                                                                        </div>
-                                                                    </figcaption>
-                                                                </figure>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-6 col-xl col-6">
-                                                        <div class="m-search-suggestion-product mb-3">
-                                                            <a href="#">
-                                                                <figure class="card  m-card"><img src="https://ss261.liverpool.com.mx/sm/1076227209.jpg" alt="Consola Xbox One S 1 TB + Battlefield">
-                                                                    <figcaption class="card-body d-flex flex-column align-items-start">
-                                                                        <p class="a-search-suggestion-title">Consola Xbox One S 1 TB + Battlefield
-                                                                        </p>
-                                                                        <div class="m-compare__products">
-                                                                            <div class="m-checkbox__button mdc-form-field">
-                                                                                <div class="m-checkbox mdc-checkbox">
-                                                                                    <input class="a-checkbox__input mdc-checkbox__native-control" type="checkbox" id="checkbox--2">
-                                                                                    <div class="mdc-checkbox__background">
-                                                                                        <svg class="mdc-checkbox__checkmark a-checkbox__svg" viewbox="0 0 24 24">
-                                                                                                                                                                      <path class="mdc-checkbox__checkmark-path a-checkbox__path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
-                                                                                                                                                                    </svg>
-                                                                                        <div class="mdc-checkbox__mixedmark"></div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <label for="checkbox--2">Comparar
-                                                                                                                                                                </label>
-                                                                            </div>
-                                                                        </div>
-                                                                    </figcaption>
-                                                                </figure>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="o-col col-lg-auto d-none d-lg-flex text-center order-lg-3"><a class="a-header__topLink" href="#">Mis pedidos</a>
-                            </div>
-                            <div class="o-col col-lg-auto d-none d-lg-flex text-center order-lg-4"><span class="a-header__topLink popover-session" data-container="body" data-toggle="popover" data-placement="bottom" data-trigger="hover" data-popover-content="#sessionPanel">Iniciar Sesión<i class="icon-arrow_down"></i></span>
-                                <div class="d-none" id="sessionPanel">
-                                    <div class="popover-body">
-                                        <div class="m-session__popover">
-                                            <ul>
-                                                <li><a class="a-header__sessionLink" href="#">Mi cuenta</a>
-                                                </li>
-                                                <li><a class="a-header__sessionLink" href="#">Mis pedidos</a>
-                                                </li>
-                                                <li><a class="a-header__sessionLink" href="#">Mi tiempo aire</a>
-                                                </li>
-                                                <li><a class="a-header__sessionLink" href="#">Mis tarjetas</a>
-                                                </li>
-                                                <li><a class="a-header__sessionLink" href="#">Mis descargas</a>
-                                                </li>
-                                                <li><a class="a-header__sessionLink" href="#">Cerrar sesión</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="o-col col-lg-auto col-3 text-lg-center text-right order-3 order-lg-5">
-                                <div class="d-inline-block d-lg-none">
-                                    <button class="a-header__profile"><i class="icon-profile"></i>
-                                                                            </button>
-                                </div>
-                                <button class="a-header__bag"><span>10</span><i class="icon-bolsa"></i>
-                                                                          </button>
-                            </div>
-                        </div>
-                    </div>
+                        } catch (Exception) {
+                            console.log("time__fail");
+                        }
+                    });
+                }
+            </script>
+            <div class="o-mainBannerContent container-fluid px-0 position-relative">
+                <div class="o-mainBanner d-flex justify-content-center align-items-center my-0">
+                    <div class="m-banner-main m-centralBanner__promo d-none d-lg-block" style="background:url('https://assets.liverpool.com.mx/assets/web/images/targeted_promotions/es/bc_190319mue_2.jpg') no-repeat center center; width:100%; height:450px; "></div>
+                    <figure class="m-figure m-centralBanner__promo d-lg-none">
+                        <a href="#"><img class="a-centralBanner__img img-fluid" src="https://assets.liverpool.com.mx/assets/web/images/targeted_promotions/es/bc_190319mue_m_2.jpg" alt="Liverpool.com.mx es la Tienda online con la selección más grande en Moda, Ropa, Zapatos, Tecnología, Laptops, Celulares, Juguetes, Muebles, Línea blanca y mucho más. Envío Gratis"
+                                title=""></a>
+                    </figure>
+                </div>
+                <ul class="m-countDown">
+                    <li class="m-countDown__days">
+                        <div class="a-countDown__daysTitle">Días</div>
+                        <div class="a-countDown__daysNumber">00</div>
+                    </li>
+                    <li class="m-countDown__hours">
+                        <div class="a-countDown__hoursTitle">Horas</div>
+                        <div class="a-countDown__hoursNumber">00</div>
+                    </li>
+                    <li class="m-countDown__minutes">
+                        <div class="a-countDown__minutesTitle">Minutos</div>
+                        <div class="a-countDown__minutesNumber">00</div>
+                    </li>
+                    <li class="m-countDown__seconds">
+                        <div class="a-countDown__secondsTitle">Segundos</div>
+                        <div class="a-countDown__secondsNumber">00</div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!--carousel-->
+        <section>
+            <div class="container my-5">
+                <div class="row carousel-heading justify-content-center">
+                    <div class="mb-5"><a href="">CONOCE LO NUEVO EN MAKEUP<i class="icon-arrow_right"></i></a></div>
+                </div>
+                <div class="owl-carousel owl-theme owl-home">
+                    <div class="item"><img class="item-img" src="https://ss701.liverpool.com.mx/lg/1081117248.jpg"></div>
+                    <div class="item"><img class="item-img" src="https://ss701.liverpool.com.mx/lg/17000063.jpg"></div>
+                    <div class="item"><img class="item-img" src="https://ss701.liverpool.com.mx/lg/1082242127.jpg"></div>
+                    <div class="item"><img class="item-img" src="https://ss701.liverpool.com.mx/lg/1080724671.jpg"></div>
+                    <div class="item"><img class="item-img" src="https://ss701.liverpool.com.mx/lg/1081001215.jpg"></div>
+                    <div class="item"><img class="item-img" src="https://ss701.liverpool.com.mx/lg/1077944423.jpg"></div>
+                    <div class="item"><img class="item-img" src="https://ss701.liverpool.com.mx/lg/1080847323.jpg"></div>
+                    <div class="item"><img class="item-img" src="https://ss701.liverpool.com.mx/lg/1080975020.jpg"></div>
                 </div>
             </div>
-            <div class="o-container__fluid container-fluid wrap-megamenu d-none d-lg-block">
-                <div class="o-container container p-0">
-                    <nav class="m-megamenu">
-                        <div class="o-row row pt-2 pb-2 align-items-center">
-                            <div class="o-col col-lg-8 text-left">
-                                <div class="o-navDesktop">
-                                    <ul class="m-navDesktop__menuList">
-                                        <li class="m-navDesktop__section"><span class="a-header__strongLink nav-desktop-menu-action pr-3" data-toggle="dropdown" data-hover="dropdown">Departamentos<i class="icon-arrow_down"></i></span>
-                                            <ul class="dropdown-menu m-megamenu__dropdown" role="menu">
-                                                <li data-submenu-id="ellas">
-                                                    <a class="a-dekstop__categoryLink" href="#">
-                                                        <div class="row">
-                                                            <div class="col-lg-10"><span>Ella</span>
-                                                            </div>
-                                                            <div class="col-lg-2"><i class="icon-arrow_right"></i>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                    <div class="m-desktop__submenu">
-                                                        <div class="popover" id="ellas">
-                                                            <div class="container">
-                                                                <div class="row">
-                                                                    <div class="col-lg-12"><a href="#"><span class="a-desktop__submenuTitle">Ella</span></a>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row align-items-end">
-                                                                    <div class="col-lg-8">
-                                                                        <div class="row">
-                                                                            <div class="col-lg-auto pb-3"><span class="a-desktop__categoryTitle">Ropa</span>
-                                                                                <ul class="m-desktop-subcategory-list">
-                                                                                    <li><a class="a-desktop__subcategoryTitle" href="#">Esenciales para el frio</a>
-                                                                                    </li>
-                                                                                    <li><a class="a-desktop__subcategoryTitle" href="#">Sombreros y gorras</a>
-                                                                                    </li>
-                                                                                    <li><a class="a-desktop__subcategoryTitle" href="#">Active Wear</a>
-                                                                                    </li>
-                                                                                    <li><a class="a-desktop__subcategoryTitle" href="#">Blusas y playeras</a>
-                                                                                    </li>
-                                                                                    <li><a class="a-desktop__subcategoryTitle" href="#">Curvy</a>
-                                                                                    </li>
-                                                                                    <li><a class="a-desktop__subcategoryTitle" href="#">Gabardinas y abrigos</a>
-                                                                                    </li>
-                                                                                    <li><a class="a-desktop__subcategoryTitle" href="#">Jeans</a>
-                                                                                    </li>
-                                                                                    <li><a class="a-desktop__subcategoryTitle" href="#">Juniors</a>
-                                                                                    </li>
-                                                                                    <li><a class="a-desktop__subcategoryMore" href="#">Ver más +</a>
-                                                                                    </li>
-                                                                                </ul>
-                                                                            </div>
-                                                                            <div class="col-lg-auto pb-3"><span class="a-desktop__categoryTitle">Ropa</span>
-                                                                                <ul class="m-desktop-subcategory-list">
-                                                                                    <li><a class="a-desktop__subcategoryTitle" href="#">Esenciales para el frio</a>
-                                                                                    </li>
-                                                                                    <li><a class="a-desktop__subcategoryTitle" href="#">Sombreros y gorras</a>
-                                                                                    </li>
-                                                                                    <li><a class="a-desktop__subcategoryTitle" href="#">Active Wear</a>
-                                                                                    </li>
-                                                                                    <li><a class="a-desktop__subcategoryTitle" href="#">Blusas y playeras</a>
-                                                                                    </li>
-                                                                                    <li><a class="a-desktop__subcategoryTitle" href="#">Curvy</a>
-                                                                                    </li>
-                                                                                    <li><a class="a-desktop__subcategoryTitle" href="#">Gabardinas y abrigos</a>
-                                                                                    </li>
-                                                                                    <li><a class="a-desktop__subcategoryTitle" href="#">Jeans</a>
-                                                                                    </li>
-                                                                                    <li><a class="a-desktop__subcategoryTitle" href="#">Juniors</a>
-                                                                                    </li>
-                                                                                    <li><a class="a-desktop__subcategoryMore" href="#">Ver más +</a>
-                                                                                    </li>
-                                                                                </ul>
-                                                                            </div>
-                                                                            <div class="col-lg-auto pb-3"><span class="a-desktop__categoryTitle">Ropa</span>
-                                                                                <ul class="m-desktop-subcategory-list">
-                                                                                    <li><a class="a-desktop__subcategoryTitle" href="#">Esenciales para el frio</a>
-                                                                                    </li>
-                                                                                    <li><a class="a-desktop__subcategoryTitle" href="#">Sombreros y gorras</a>
-                                                                                    </li>
-                                                                                    <li><a class="a-desktop__subcategoryTitle" href="#">Active Wear</a>
-                                                                                    </li>
-                                                                                    <li><a class="a-desktop__subcategoryTitle" href="#">Blusas y playeras</a>
-                                                                                    </li>
-                                                                                    <li><a class="a-desktop__subcategoryTitle" href="#">Curvy</a>
-                                                                                    </li>
-                                                                                    <li><a class="a-desktop__subcategoryTitle" href="#">Gabardinas y abrigos</a>
-                                                                                    </li>
-                                                                                    <li><a class="a-desktop__subcategoryTitle" href="#">Jeans</a>
-                                                                                    </li>
-                                                                                    <li><a class="a-desktop__subcategoryTitle" href="#">Juniors</a>
-                                                                                    </li>
-                                                                                    <li><a class="a-desktop__subcategoryMore" href="#">Ver más +</a>
-                                                                                    </li>
-                                                                                </ul>
-                                                                            </div>
-                                                                            <div class="col-lg-auto pb-3"><span class="a-desktop__categoryTitle">Ropa</span>
-                                                                                <ul class="m-desktop-subcategory-list">
-                                                                                    <li><a class="a-desktop__subcategoryTitle" href="#">Esenciales para el frio</a>
-                                                                                    </li>
-                                                                                    <li><a class="a-desktop__subcategoryTitle" href="#">Sombreros y gorras</a>
-                                                                                    </li>
-                                                                                    <li><a class="a-desktop__subcategoryTitle" href="#">Active Wear</a>
-                                                                                    </li>
-                                                                                    <li><a class="a-desktop__subcategoryTitle" href="#">Blusas y playeras</a>
-                                                                                    </li>
-                                                                                    <li><a class="a-desktop__subcategoryTitle" href="#">Curvy</a>
-                                                                                    </li>
-                                                                                    <li><a class="a-desktop__subcategoryTitle" href="#">Gabardinas y abrigos</a>
-                                                                                    </li>
-                                                                                    <li><a class="a-desktop__subcategoryTitle" href="#">Jeans</a>
-                                                                                    </li>
-                                                                                    <li><a class="a-desktop__subcategoryTitle" href="#">Juniors</a>
-                                                                                    </li>
-                                                                                    <li><a class="a-desktop__subcategoryMore" href="#">Ver más +</a>
-                                                                                    </li>
-                                                                                </ul>
-                                                                            </div>
-                                                                            <div class="col-lg-auto pb-3"><span class="a-desktop__categoryTitle">Ropa</span>
-                                                                                <ul class="m-desktop-subcategory-list">
-                                                                                    <li><a class="a-desktop__subcategoryTitle" href="#">Esenciales para el frio</a>
-                                                                                    </li>
-                                                                                    <li><a class="a-desktop__subcategoryTitle" href="#">Sombreros y gorras</a>
-                                                                                    </li>
-                                                                                    <li><a class="a-desktop__subcategoryTitle" href="#">Active Wear</a>
-                                                                                    </li>
-                                                                                    <li><a class="a-desktop__subcategoryTitle" href="#">Blusas y playeras</a>
-                                                                                    </li>
-                                                                                    <li><a class="a-desktop__subcategoryTitle" href="#">Curvy</a>
-                                                                                    </li>
-                                                                                    <li><a class="a-desktop__subcategoryTitle" href="#">Gabardinas y abrigos</a>
-                                                                                    </li>
-                                                                                    <li><a class="a-desktop__subcategoryTitle" href="#">Jeans</a>
-                                                                                    </li>
-                                                                                    <li><a class="a-desktop__subcategoryTitle" href="#">Juniors</a>
-                                                                                    </li>
-                                                                                    <li><a class="a-desktop__subcategoryMore" href="#">Ver más +</a>
-                                                                                    </li>
-                                                                                </ul>
-                                                                            </div>
-                                                                            <div class="col-lg-auto pb-3"><span class="a-desktop__categoryTitle">Ropa</span>
-                                                                                <ul class="m-desktop-subcategory-list">
-                                                                                    <li><a class="a-desktop__subcategoryTitle" href="#">Esenciales para el frio</a>
-                                                                                    </li>
-                                                                                    <li><a class="a-desktop__subcategoryTitle" href="#">Sombreros y gorras</a>
-                                                                                    </li>
-                                                                                    <li><a class="a-desktop__subcategoryTitle" href="#">Active Wear</a>
-                                                                                    </li>
-                                                                                    <li><a class="a-desktop__subcategoryTitle" href="#">Blusas y playeras</a>
-                                                                                    </li>
-                                                                                    <li><a class="a-desktop__subcategoryTitle" href="#">Curvy</a>
-                                                                                    </li>
-                                                                                    <li><a class="a-desktop__subcategoryTitle" href="#">Gabardinas y abrigos</a>
-                                                                                    </li>
-                                                                                    <li><a class="a-desktop__subcategoryTitle" href="#">Jeans</a>
-                                                                                    </li>
-                                                                                    <li><a class="a-desktop__subcategoryTitle" href="#">Juniors</a>
-                                                                                    </li>
-                                                                                    <li><a class="a-desktop__subcategoryMore" href="#">Ver más +</a>
-                                                                                    </li>
-                                                                                </ul>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="row">
-                                                                            <div class="col-lg-12"><a class="a-desktop__moreTitle" href="#">Ver todas las secciones</a>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-lg-4">
-                                                                        <div class="row">
-                                                                            <div class="col-12">
-                                                                                <a class="a-desktop__subcategoryImg" href="#">
-                                                                                    <figure class="m-0"><img src="https://assets.liverpool.com.mx/landings/megamenu/mm-ella-071118.png" alt="Image">
-                                                                                    </figure>
-                                                                                </a>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li data-submenu-id="el">
-                                                    <a class="a-dekstop__categoryLink" href="#">
-                                                        <div class="row">
-                                                            <div class="col-lg-10"><span>Él</span>
-                                                            </div>
-                                                            <div class="col-lg-2"><i class="icon-arrow_right"></i>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                    <div class="m-desktop__submenu">
-                                                        <div class="popover" id="el">
-                                                            <h3 class="popover-title">Subdepartamento 2</h3>
-                                                            <div class="popover-content">
-                                                                <p>Prueba</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li data-submenu-id="bebes-y-ninos">
-                                                    <a class="a-dekstop__categoryLink" href="#">
-                                                        <div class="row">
-                                                            <div class="col-lg-10"><span>Bebés y Niños</span>
-                                                            </div>
-                                                            <div class="col-lg-2"><i class="icon-arrow_right"></i>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                    <div class="m-desktop__submenu">
-                                                        <div class="popover" id="bebes-y-ninos">
-                                                            <h3 class="popover-title">Subdepartamento 3</h3>
-                                                            <div class="popover-content">
-                                                                <p>Prueba</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li data-submenu-id="zapatos">
-                                                    <a class="a-dekstop__categoryLink" href="#">
-                                                        <div class="row">
-                                                            <div class="col-lg-10"><span>Zapatos</span>
-                                                            </div>
-                                                            <div class="col-lg-2"><i class="icon-arrow_right"></i>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                    <div class="m-desktop__submenu">
-                                                        <div class="popover" id="zapatos">
-                                                            <h3 class="popover-title">Subdepartamento 4</h3>
-                                                            <div class="popover-content">
-                                                                <p>Prueba</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li data-submenu-id="belleza">
-                                                    <a class="a-dekstop__categoryLink" href="#">
-                                                        <div class="row">
-                                                            <div class="col-lg-10"><span>Belleza</span>
-                                                            </div>
-                                                            <div class="col-lg-2"><i class="icon-arrow_right"></i>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                    <div class="m-desktop__submenu">
-                                                        <div class="popover" id="belleza">
-                                                            <h3 class="popover-title">Subdepartamento 5</h3>
-                                                            <div class="popover-content">
-                                                                <p>Prueba</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li data-submenu-id="relojes-lentes-y-joyeria">
-                                                    <a class="a-dekstop__categoryLink" href="#">
-                                                        <div class="row">
-                                                            <div class="col-lg-10"><span>Relojes, Lentes y joyeria</span>
-                                                            </div>
-                                                            <div class="col-lg-2"><i class="icon-arrow_right"></i>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                    <div class="m-desktop__submenu">
-                                                        <div class="popover" id="relojes-lentes-y-joyeria">
-                                                            <h3 class="popover-title">Subdepartamento 6</h3>
-                                                            <div class="popover-content">
-                                                                <p>Prueba</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li data-submenu-id="deportes">
-                                                    <a class="a-dekstop__categoryLink" href="#">
-                                                        <div class="row">
-                                                            <div class="col-lg-10"><span>Deportes</span>
-                                                            </div>
-                                                            <div class="col-lg-2"><i class="icon-arrow_right"></i>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                    <div class="m-desktop__submenu">
-                                                        <div class="popover" id="deportes">
-                                                            <h3 class="popover-title">Subdepartamento 7</h3>
-                                                            <div class="popover-content">
-                                                                <p>Prueba</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li data-submenu-id="computo-y-electronica">
-                                                    <a class="a-dekstop__categoryLink" href="#">
-                                                        <div class="row">
-                                                            <div class="col-lg-10"><span>Cómputo y Electrónica</span>
-                                                            </div>
-                                                            <div class="col-lg-2"><i class="icon-arrow_right"></i>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                    <div class="m-desktop__submenu">
-                                                        <div class="popover" id="computo-y-electronica">
-                                                            <h3 class="popover-title">Subdepartamento 8</h3>
-                                                            <div class="popover-content">
-                                                                <p>Prueba</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li data-submenu-id="celulares">
-                                                    <a class="a-dekstop__categoryLink" href="#">
-                                                        <div class="row">
-                                                            <div class="col-lg-10"><span>Celulares</span>
-                                                            </div>
-                                                            <div class="col-lg-2"><i class="icon-arrow_right"></i>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                    <div class="m-desktop__submenu">
-                                                        <div class="popover" id="celulares">
-                                                            <h3 class="popover-title">Subdepartamento 9</h3>
-                                                            <div class="popover-content">
-                                                                <p>Prueba</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li data-submenu-id="videojuegos">
-                                                    <a class="a-dekstop__categoryLink" href="#">
-                                                        <div class="row">
-                                                            <div class="col-lg-10"><span>Videojuegos</span>
-                                                            </div>
-                                                            <div class="col-lg-2"><i class="icon-arrow_right"></i>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                    <div class="m-desktop__submenu">
-                                                        <div class="popover" id="videojuegos">
-                                                            <h3 class="popover-title">Subdepartamento 10</h3>
-                                                            <div class="popover-content">
-                                                                <p>Prueba</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li data-submenu-id="juguetes">
-                                                    <a class="a-dekstop__categoryLink" href="#">
-                                                        <div class="row">
-                                                            <div class="col-lg-10"><span>Juguetes</span>
-                                                            </div>
-                                                            <div class="col-lg-2"><i class="icon-arrow_right"></i>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                    <div class="m-desktop__submenu">
-                                                        <div class="popover" id="juguetes">
-                                                            <h3 class="popover-title">Subdepartamento 11</h3>
-                                                            <div class="popover-content">
-                                                                <p>Prueba</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li data-submenu-id="linea-blanca">
-                                                    <a class="a-dekstop__categoryLink" href="#">
-                                                        <div class="row">
-                                                            <div class="col-lg-10"><span>Línea Blanca</span>
-                                                            </div>
-                                                            <div class="col-lg-2"><i class="icon-arrow_right"></i>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                    <div class="m-desktop__submenu">
-                                                        <div class="popover" id="linea-blanca">
-                                                            <h3 class="popover-title">Subdepartamento 12</h3>
-                                                            <div class="popover-content">
-                                                                <p>Prueba</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li data-submenu-id="muebles">
-                                                    <a class="a-dekstop__categoryLink" href="#">
-                                                        <div class="row">
-                                                            <div class="col-lg-10"><span>Muebles</span>
-                                                            </div>
-                                                            <div class="col-lg-2"><i class="icon-arrow_right"></i>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                    <div class="m-desktop__submenu">
-                                                        <div class="popover" id="muebles">
-                                                            <h3 class="popover-title">Subdepartamento 13</h3>
-                                                            <div class="popover-content">
-                                                                <p>Prueba</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li data-submenu-id="cocina">
-                                                    <a class="a-dekstop__categoryLink" href="#">
-                                                        <div class="row">
-                                                            <div class="col-lg-10"><span>Cocina</span>
-                                                            </div>
-                                                            <div class="col-lg-2"><i class="icon-arrow_right"></i>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                    <div class="m-desktop__submenu">
-                                                        <div class="popover" id="cocina">
-                                                            <h3 class="popover-title">Subdepartamento 14</h3>
-                                                            <div class="popover-content">
-                                                                <p>Prueba</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li data-submenu-id="casa">
-                                                    <a class="a-dekstop__categoryLink" href="#">
-                                                        <div class="row">
-                                                            <div class="col-lg-10"><span>Casa</span>
-                                                            </div>
-                                                            <div class="col-lg-2"><i class="icon-arrow_right"></i>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                    <div class="m-desktop__submenu">
-                                                        <div class="popover" id="casa">
-                                                            <h3 class="popover-title">Subdepartamento 15</h3>
-                                                            <div class="popover-content">
-                                                                <p>Prueba</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li data-submenu-id="vinos-y-licores">
-                                                    <a class="a-dekstop__categoryLink" href="#">
-                                                        <div class="row">
-                                                            <div class="col-lg-10"><span>Vinos y Licores</span>
-                                                            </div>
-                                                            <div class="col-lg-2"><i class="icon-arrow_right"></i>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                    <div class="m-desktop__submenu">
-                                                        <div class="popover" id="vinos-y-licores">
-                                                            <h3 class="popover-title">Subdepartamento 16</h3>
-                                                            <div class="popover-content">
-                                                                <p>Prueba</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li data-submenu-id="viajes">
-                                                    <a class="a-dekstop__categoryLink" href="#">
-                                                        <div class="row">
-                                                            <div class="col-lg-10"><span>Viajes</span>
-                                                            </div>
-                                                            <div class="col-lg-2"><i class="icon-arrow_right"></i>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                    <div class="m-desktop__submenu">
-                                                        <div class="popover" id="viajes">
-                                                            <h3 class="popover-title">Subdepartamento 17</h3>
-                                                            <div class="popover-content">
-                                                                <p>Prueba</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li data-submenu-id="farmacia">
-                                                    <a class="a-dekstop__categoryLink" href="#">
-                                                        <div class="row">
-                                                            <div class="col-lg-10"><span>Farmacia</span>
-                                                            </div>
-                                                            <div class="col-lg-2"><i class="icon-arrow_right"></i>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                    <div class="m-desktop__submenu">
-                                                        <div class="popover" id="farmacia">
-                                                            <h3 class="popover-title">Subdepartamento 18</h3>
-                                                            <div class="popover-content">
-                                                                <p>Prueba</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="m-navDesktop__section pl-6"><a class="a-header__strongLink pr-3" href="#">Mesa de regalos</a>
-                                        </li>
-                                        <li class="m-navDesktop__section"><span class="a-header__strongLink popover-session pr-3" data-container="body" data-toggle="popover" data-placement="bottom" data-trigger="hover" data-popover-content="#creditPanel">Mi crédito<i class="icon-arrow_down"></i></span>
-                                            <div class="d-none" id="creditPanel">
-                                                <div class="popover-body">
-                                                    <div class="m-session__popover">
-                                                        <ul>
-                                                            <li><a class="a-header__sessionLink" href="#">Estado de cuenta</a>
-                                                            </li>
-                                                            <li><a class="a-header__sessionLink" href="#">Estatus de solicitud</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="m-navDesktop__section"><span class="a-header__strongLink popover-session" data-container="body" data-toggle="popover" data-placement="bottom" data-trigger="hover" data-popover-content="#segurosPanel">Seguros<i class="icon-arrow_down"></i></span>
-                                            <div class="d-none" id="segurosPanel">
-                                                <div class="popover-body">
-                                                    <div class="m-session__popover">
-                                                        <ul>
-                                                            <li><a class="a-header__sessionLink" href="#">Seguro de autos</a>
-                                                            </li>
-                                                            <li><a class="a-header__sessionLink" href="#">Más información de seguros</a>
-                                                            </li>
-                                                            <li><a class="a-header__sessionLink" href="#">Protección celular</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="o-col col-lg-4 text-right">
-                                <div class="o-navDesktop">
-                                    <ul class="m-navDesktop__menuList">
-                                        <li class="m-navDesktop__section"><a class="a-header__strongLink pr-3" href="#">Sorteos</a>
-                                        </li>
-                                        <li class="m-navDesktop__section"><a class="a-header__strongLink pr-3" href="#">Ayuda</a>
-                                        </li>
-                                        <li class="m-navDesktop__section"><a class="a-header__strongLink" href="#">Tiendas </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </nav>
+        </section>
+        <!--promo 1-->
+        <section class="o-promoOne">
+            <div class="o-container container">
+                <m-promoOne class="d-flex flex-lg-row flex-column">
+                    <figure class="m-figure m-promoOne px-2 d-none d-lg-block">
+                        <a href="#"><img class="a-promoOne__img" src="https://assets.liverpool.com.mx/assets/web/images/targeted_promotions/es/bpromo1a_220319ffella.jpg" alt="Ella, Zapatos, Bolsas, Vestidos, Accesorios, Tacones, Curvy, Petite, Ropa de Mujer, Ella en Liverpool"
+                                title="Línea Blanca | Liverpool"></a>
+                    </figure>
+                    <figure class="m-figure m-promoOne px-2 d-lg-none">
+                        <a href="#"><img class="a-promoOne__img" src="https://assets.liverpool.com.mx/assets/web/images/targeted_promotions/es/bpromo1a_220319ffella_m.jpg" alt="Ella, Zapatos, Bolsas, Vestidos, Accesorios, Tacones, Curvy, Petite, Ropa de Mujer, Ella en Liverpool"
+                                title="Cocina | Liverpool"></a>
+                    </figure>
+                </m-promoOne>
+                <div class="m-promoOne d-flex flex-lg-row flex-column">
+                    <figure class="m-figure m-promoOne px-2 d-lg-block d-none">
+                        <a href="#"><img class="a-promoOne__img" src="https://assets.liverpool.com.mx/assets/web/images/targeted_promotions/es/bpromo1b_220319ffel.jpg" alt="Ropa, Zapatos, Sacos, Camisas, Trajes, Ropa Interior, Jeans, Polos para Caballeros | Liverpool"
+                                title="West Elm - Liverpool"></a>
+                    </figure>
+                    <figure class="m-figure m-promoOne px-2 d-lg-none">
+                        <a href="#"><img class="a-promoOne__img" src="https://assets.liverpool.com.mx/assets/web/images/targeted_promotions/es/bpromo1b_220319ffel_m.jpg" alt="Ropa, Zapatos, Sacos, Camisas, Trajes, Ropa Interior, Jeans, Polos para Caballeros | Liverpool"
+                                title="Colchones| Liverpool"></a>
+                    </figure>
                 </div>
             </div>
-        </div>
-    </header>
-    <main>
-<!-- Start: Hosted COntent"-->
-      <!--start central Banner Promo-->
-      <script>
-        {
-        window.addEventListener('load',()=>{
-        try{
-        let endDate = new Date("Mar 30, 2019 23:59:59").getTime();
-        elDays = document.querySelector(".a-countDown__daysNumber");
-        elHours = document.querySelector(".a-countDown__hoursNumber");
-        elMinutes = document.querySelector(".a-countDown__minutesNumber");
-        elSeconds = document.querySelector(".a-countDown__secondsNumber");
-        operationsTime = ()=>{
-        let nowaday = new Date().getTime();
-        distanceBetweenDays = endDate - nowaday;
-        days = Math.floor(distanceBetweenDays / (1000 * 60 * 60 * 24));
-        hours = Math.floor((distanceBetweenDays % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        minutes = Math.floor((distanceBetweenDays % (1000 * 60 * 60)) / (1000 * 60));
-        seconds = Math.floor((distanceBetweenDays % (1000 * 60)) / 1000);
-        if( distanceBetweenDays < 0 ){
-        clearInterval(engineTime);
-        days = 0;
-        hours = 0;
-        minutes = 0;
-        seconds = 0;
-        }
-        return {
-        "days":days,
-        "hours":hours,
-        "minutes":minutes,
-        "seconds":seconds
-        }
-        }
-        setDataTime =(d,h,m,s) =>{
-        elDays.innerHTML = d < 10 ? "0" + d : d;
-        elHours.innerHTML = h < 10 ? "0" + h : h;
-        elMinutes.innerHTML = m < 10 ? "0" + m : m;
-        elSeconds.innerHTML = s < 10 ?  "0" + s : s;
-        }
-        runTime = ()=>{
-        let dataTime = operationsTime();
-        setDataTime(dataTime.days,dataTime.hours,dataTime.minutes,dataTime.seconds);
-        }
-        let engineTime =  setInterval(runTime,1000);
-        }catch(Exception){
-        console.log("time__fail");
-        }
-        });
-        }
-      </script>
-      <style>
-        .o-mainBanner{
-            padding-left:0px;
-            padding-right:0px;
-        }
-        .a-mainBanner__image,.a-promoOne__image,.a-promoThree__image{
-            max-width:100%;
-        }
-        .a-promoOne__image{
-            margin-top:.5rem;
-            margin-bottom:.5rem;
-        }
-        .m-promoTwo__titlem,.m-promoThree__title{
-            margin-top:.5rem;
-            margin-bottom:.5rem;
-        }
-        .a-promoTwo__titlem {
-            font-size: 1.5em;
-            font-family: 'Open Sans', sans-serif;
-            text-align: center;
-        }
-        .--hoverZoom {
-            transition: transform 0.4s;
-            margin: 0 auto;
-        }
-        .--hoverZoom:hover {
-         transform: scale(0.97);
-        }
-      </style>
-      <section class="o-mainBanner container-fluid"><a class="m-mainBanner__link" href="#">
-          <picture class="m-mainBanner__picture">
-            <source class="a-mainBanner__source" media="(max-width: 991px)" srcset="https://assets.liverpool.com.mx/assets/web/images/targeted_promotions/es/bc_190319mue_m_2.jpg">
-            <source class="a-mainBanner__source" media="(min-width: 992px)" srcset="https://assets.liverpool.com.mx/assets/web/images/targeted_promotions/es/bc_190319mue_2.jpg"><img class="a-mainBanner__image" src="https://assets.liverpool.com.mx/assets/web/images/targeted_promotions/es/bc_190319mue_m_2.jpg" alt="Liverpool.com.mx es la Tienda online con la selección más grande en Moda, Ropa, Zapatos, Tecnología, Laptops, Celulares, Juguetes, Muebles, Línea blanca y mucho más. Envío Gratis" title="">
-          </picture></a></section>
-      <!--end central banner promo-->
-      <!--start carousel-->
-      <section>
-        <div class="container my-5">
-          <div class="row carousel-heading justify-content-center">
-            <div class="mb-5"><a href="">CONOCE LO NUEVO EN MAKEUP<i class="icon-arrow_right"></i></a></div>
-          </div>
-          <div class="owl-carousel owl-theme owl-home">
-            <div class="item"><img class="item-img" src="https://ss701.liverpool.com.mx/lg/1081117248.jpg"></div>
-            <div class="item"><img class="item-img" src="https://ss701.liverpool.com.mx/lg/17000063.jpg"></div>
-            <div class="item"><img class="item-img" src="https://ss701.liverpool.com.mx/lg/1082242127.jpg"></div>
-            <div class="item"><img class="item-img" src="https://ss701.liverpool.com.mx/lg/1080724671.jpg"></div>
-            <div class="item"><img class="item-img" src="https://ss701.liverpool.com.mx/lg/1081001215.jpg"></div>
-            <div class="item"><img class="item-img" src="https://ss701.liverpool.com.mx/lg/1077944423.jpg"></div>
-            <div class="item"><img class="item-img" src="https://ss701.liverpool.com.mx/lg/1080847323.jpg"></div>
-            <div class="item"><img class="item-img" src="https://ss701.liverpool.com.mx/lg/1080975020.jpg"></div>
-          </div>
-        </div>
-      </section>
-      <!--end carousel-->
-      <!--start promo 1-->
-      <section class="o-promoOne container"><a class="m-promoOne__link" href="#">
-          <picture class="m-promoOne__picture">
-            <source class="a-promoOne__source" media="(max-width: 991px)" srcset="https://assets.liverpool.com.mx/assets/web/images/targeted_promotions/es/bpromo1a_220319ffella_m.jpg">
-            <source class="a-promoOne__source" media="(min-width: 992px)" srcset="https://assets.liverpool.com.mx/assets/web/images/targeted_promotions/es/bpromo1a_220319ffella.jpg"><img class="a-promoOne__image --hoverZoom" src="https://assets.liverpool.com.mx/assets/web/images/targeted_promotions/es/bpromo1a_220319ffella.jpg" alt="Ella, Zapatos, Bolsas, Vestidos, Accesorios, Tacones, Curvy, Petite, Ropa de Mujer, Ella en Liverpool" title="Línea Blanca | Liverpool">
-          </picture></a><a class="m-promoOne__link" href="#">
-          <picture class="m-promoOne__picture">
-            <source class="a-promoOne__source" media="(max-width: 991px)" srcset="https://assets.liverpool.com.mx/assets/web/images/targeted_promotions/es/bpromo1b_220319ffel_m.jpg">
-            <source class="a-promoOne__source" media="(min-width: 992px)" srcset="https://assets.liverpool.com.mx/assets/web/images/targeted_promotions/es/bpromo1b_220319ffel.jpg"><img class="a-promoOne__image --hoverZoom" src="https://assets.liverpool.com.mx/assets/web/images/targeted_promotions/es/bpromo1b_220319ffel.jpg" alt="Ropa, Zapatos, Sacos, Camisas, Trajes, Ropa Interior, Jeans, Polos para Caballeros | Liverpool" title="Colchones| Liverpool">
-          </picture></a></section>
-      <!--end promo 1-->
-      <!--start carousel-->
-      <section>
-        <div class="container my-5">
-          <div class="row carousel-heading justify-content-center">
-            <div class="mb-5"><a href="">ACCESORIOS PARA BEBÈS<i class="icon-arrow_right"></i></a></div>
-          </div>
-          <div class="owl-carousel owl-theme owl-home">
-            <div class="item"><img class="item-img" src="https://ss417.liverpool.com.mx/lg/1080415288.jpg"></div>
-            <div class="item"><img class="item-img" src="https://ss417.liverpool.com.mx/lg/1079828579.jpg"></div>
-            <div class="item"><img class="item-img" src="https://ss417.liverpool.com.mx/lg/1080416101.jpg"></div>
-            <div class="item"><img class="item-img" src="https://ss417.liverpool.com.mx/lg/1080415270.jpg"></div>
-            <div class="item"><img class="item-img" src="https://ss417.liverpool.com.mx/lg/1081025891.jpg"></div>
-            <div class="item"><img class="item-img" src="https://ss417.liverpool.com.mx/lg/1079406623.jpg"></div>
-            <div class="item"><img class="item-img" src="https://ss417.liverpool.com.mx/lg/1080990266.jpg"></div>
-            <div class="item"><img class="item-img" src="https://ss417.liverpool.com.mx/lg/1059391166.jpg"></div>
-          </div>
-        </div>
-      </section>
-      <!--end carousel-->
-      <!--start promo 2-->
-      <section class="o-promoTwo container">
-        <div class="m-promoTwo__title">
-          <h2 class="a-promoTwo__title">Decora el cuarto de tu bebé</h2>
-        </div><a class="m-promoOne__link" href="#">
-          <picture class="m-promoOne__picture">
-            <source class="a-promoOne__source" media="(max-width: 991px)" srcset="https://assets.liverpool.com.mx/assets/web/images/targeted_promotions/es/bpromo02a_190319beb_m.jpg">
-            <source class="a-promoOne__source" media="(min-width: 992px)" srcset="https://assets.liverpool.com.mx/assets/web/images/targeted_promotions/es/bpromo02a_190319beb.jpg"><img class="a-promoOne__image --hoverZoom" src="https://assets.liverpool.com.mx/assets/web/images/targeted_promotions/es/bpromo02a_190319beb.jpg" alt="Bebés, Cunas, Carriolas, Biberones,  Portabebés, Pañaleras, Niños, Accesorios para Bebés | Liverpool" title="Muebles para Bebé | Liverpool">
-          </picture></a>
-        <div class="m-promoTwo__title">
-          <h2 class="a-promoTwo__title">Planea los outfits que te vas a llevar de viaje</h2>
-        </div>
-        <m-promoTwo__content class="row">
-          <figure class="m-promoOne__figure col-12 col-lg-6"><a class="m-promoOne__link" href="#"><img class="a-promoOne__image --hoverZoom" src="https://assets.liverpool.com.mx/assets/web/images/targeted_promotions/es/bpromo02b_190319lev.jpg" alt="Levis, Jeans, Levis México, Camisas, playeras, blusas, chamarra, Levis | Liverpool" title="Levi's | Liverpool"></a></figure>
-          <figure class="m-promoOne__figure col-12 col-lg-6"><a class="m-promoOne__link" href="#"><img class="a-promoOne__image --hoverZoom" src="https://assets.liverpool.com.mx/assets/web/images/targeted_promotions/es/bpromo02c_190319via.jpg" alt="Viajes, Paquetes, Hoteles, Vuelos, Tours, Cruceros | Liverpool" title="Viajes | Liverpool"></a></figure>
-        </m-promoTwo__content>
-      </section>
-      <!--end promo 2-->
-      <!--start carousel-->
-      <section>
-        <div class="container my-5">
-          <div class="row carousel-heading justify-content-center">
-            <div class="mb-5"><a href="">CÁMARAS HASTA 33% DE DESCUENTO<i class="icon-arrow_right"></i></a></div>
-          </div>
-          <div class="owl-carousel owl-theme owl-home">
-            <div class="item"><img class="item-img" src="https://ss627.liverpool.com.mx/lg/1063581492.jpg"></div>
-            <div class="item"><img class="item-img" src="https://ss627.liverpool.com.mx/lg/1048074444.jpg"></div>
-            <div class="item"><img class="item-img" src="https://ss627.liverpool.com.mx/lg/1075048331.jpg"></div>
-            <div class="item"><img class="item-img" src="https://ss627.liverpool.com.mx/lg/1075048323.jpg"></div>
-            <div class="item"><img class="item-img" src="https://ss627.liverpool.com.mx/lg/1078740112.jpg"></div>
-            <div class="item"><img class="item-img" src="https://ss627.liverpool.com.mx/lg/1071471566.jpg"></div>
-            <div class="item"><img class="item-img" src="https://ss627.liverpool.com.mx/lg/1071471558.jpg"></div>
-            <div class="item"><img class="item-img" src="https://ss627.liverpool.com.mx/lg/1030846881.jpg"></div>
-          </div>
-        </div>
-      </section>
-      <!--end carousel-->
-      <!--start promo 3-->
-      <section class="o-promoThree container">
-        <div class="m-promoThree__title">
-          <h2 class="a-promoThree__title">Decora el cuarto de tu bebé</h2>
-        </div>
-        <div class="m-promoThree__content row">
-          <figure class="m-promoThree__figure col-12 col-lg-6"><a class="m-promotThree__link" href="#"><img class="a-promoThree__image --hoverZoom" src="https://assets.liverpool.com.mx/assets/web/images/targeted_promotions/es/bpromo03a_190319mot.jpg" alt="Motos, motocicletas, deportiva, moto de trabajo, Yamaha, Italika, Carabela, motocicletas en Liverpool" title="Motos | Liverpool"></a></figure>
-          <figure class="m-promoThree__figure col-12 col-lg-6"><a class="m-promotThree__link" href="#"><img class="a-promoThree__image --hoverZoom" src="https://assets.liverpool.com.mx/assets/web/images/targeted_promotions/es/bpromo03b_190319eje.jpg" alt="Aparatos para hacer ejercicio, caminadora, bicicleta fija, mancuernas, escaladora, pack, aparatos ejercicio en Liverpool" title="Aparatos de Ejercicio | Liverpool"></a></figure>
-          <figure class="m-promoThree__figure col-12 col-lg-6"><a class="m-promotThree__link" href="#"><img class="a-promoThree__image --hoverZoom" src="https://assets.liverpool.com.mx/assets/web/images/targeted_promotions/es/bpromo03c_190319cel.jpg" alt="Celulares, Smartphones, Los mejores smartphones 2018, Motorola, Samsung, Huawei, Iphone, Fundas para celular, Celulares en Liverpool" title="Celulares | Liverpool"></a></figure>
-          <figure class="m-promoThree__figure col-12 col-lg-6"><a class="m-promotThree__link" href="#"><img class="a-promoThree__image --hoverZoom" src="https://assets.liverpool.com.mx/assets/web/images/targeted_promotions/es/bpromo03d_190319com.jpg" alt="Laptops, HP, Lenovo, Laptop Gamer, Dell, Toshiba, Laptops | Liverpool" title="Computadoras | Liverpool"></a></figure>
-        </div>
-      </section>
-      <!--end promo 3-->
-      <section>
-        <div class="container mb-5">
-          <div class="row no-gutters">
-            <div class="col-lg-4 col-12 border-right text-center"><a class="link-image" href=""><img src="https://assets.liverpool.com.mx/assets/web/images/envio_gratis.jpg" alt=""></a></div>
-            <div class="col-lg-4 col-12 border-right text-center"><a class="link-image" href=""><img src="https://assets.liverpool.com.mx/assets/web/images/garantia_liverpool.jpg" alt=""></a></div>
-            <div class="col-lg-4 col-12 text-center"><a class="link-image" href=""><img src="https://assets.liverpool.com.mx/assets/web/images/click_collect.jpg" alt=""></a></div>
-          </div>
-        </div>
-      </section>
-    </main>
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center pt-3 pb-3"><a class="a-footer__linkSession" href="#">Iniciar Sesión</a>
+        </section>
+        <!--carousel-->
+        <section>
+            <div class="container my-5">
+                <div class="row carousel-heading justify-content-center">
+                    <div class="mb-5"><a href="">ACCESORIOS PARA BEBÈS<i class="icon-arrow_right"></i></a></div>
+                </div>
+                <div class="owl-carousel owl-theme owl-home">
+                    <div class="item"><img class="item-img" src="https://ss417.liverpool.com.mx/lg/1080415288.jpg"></div>
+                    <div class="item"><img class="item-img" src="https://ss417.liverpool.com.mx/lg/1079828579.jpg"></div>
+                    <div class="item"><img class="item-img" src="https://ss417.liverpool.com.mx/lg/1080416101.jpg"></div>
+                    <div class="item"><img class="item-img" src="https://ss417.liverpool.com.mx/lg/1080415270.jpg"></div>
+                    <div class="item"><img class="item-img" src="https://ss417.liverpool.com.mx/lg/1081025891.jpg"></div>
+                    <div class="item"><img class="item-img" src="https://ss417.liverpool.com.mx/lg/1079406623.jpg"></div>
+                    <div class="item"><img class="item-img" src="https://ss417.liverpool.com.mx/lg/1080990266.jpg"></div>
+                    <div class="item"><img class="item-img" src="https://ss417.liverpool.com.mx/lg/1059391166.jpg"></div>
                 </div>
             </div>
-            <div class="row align-items-top">
-                <div class="col-12 pb-3 pb-lg-5">
-                    <hr>
+        </section>
+        <!--promo 2-->
+        <section class="o-promoTwo">
+            <div class="container my-5">
+                <div class="d-flex flex-lg-row justify-content-center">
+                    <h2 class="a-promoTwo__title">Decora el cuarto de tu bebé
+                    </h2>
                 </div>
-                <div class="col-12 col-lg-8">
-                    <nav>
-                        <div class="row">
-                            <div class="card-columns w-100">
-                                <div class="col-12 col-lg order-1">
-                                    <div class="card m-footer__accordion">
-                                        <div class="card-header d-flex justify-content-between align-items-center" data-toggle="collapse" data-target="#collapseSupport" aria-expanded="false" aria-controls="collapseSupport" id="support">
-                                            <h3 class="a-footer__sectionTitle">Soporte al cliente
-                                            </h3><i class="icon-arrow_down d-block d-lg-none"></i>
-                                        </div>
-                                        <div class="collapse" aria-labelledby="support" id="collapseSupport">
-                                            <div class="card-body pt-0 pb-lg-0">
-                                                <ul class="m-0">
-                                                    <li class="p-0"><a class="a-footer__link" href="#">Facturación</a>
-                                                    </li>
-                                                    <li class="p-0"><a class="a-footer__link" href="#">Ayuda</a>
-                                                    </li>
-                                                    <li class="p-0"><a class="a-footer__link" href="#">Mis pedidos</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-lg order-2">
-                                    <div class="card m-footer__accordion">
-                                        <div class="card-header d-flex justify-content-between align-items-center" data-toggle="collapse" data-target="#collapseRefundAndCancel" aria-expanded="false" aria-controls="collapseRefundAndCancel" id="refundAndCancel">
-                                            <h3 class="a-footer__sectionTitle">Servicios Liverpool
-                                            </h3><i class="icon-arrow_down d-block d-lg-none"></i>
-                                        </div>
-                                        <div class="collapse" aria-labelledby="refundAndCancel" id="collapseRefundAndCancel">
-                                            <div class="card-body pt-0 pb-lg-0">
-                                                <ul class="m-0">
-                                                    <li class="p-0"><a class="a-footer__link" href="#">Crédito</a>
-                                                    </li>
-                                                    <li class="p-0"><a class="a-footer__link" href="#">Tiempo aire</a>
-                                                    </li>
-                                                    <li class="p-0"><a class="a-footer__link" href="#">Concursos y promociones</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-lg order-3">
-                                    <div class="card m-footer__accordion">
-                                        <div class="card-header d-flex justify-content-between align-items-center" data-toggle="collapse" data-target="#collapseAboutUs" aria-expanded="false" aria-controls="collapseAboutUs" id="aboutUs">
-                                            <h3 class="a-footer__sectionTitle">Acerca de Liverpool
-                                            </h3><i class="icon-arrow_down d-block d-lg-none"></i>
-                                        </div>
-                                        <div class="collapse" aria-labelledby="aboutUs" id="collapseAboutUs">
-                                            <div class="card-body pt-0 pb-lg-0">
-                                                <ul class="m-0">
-                                                    <li class="p-0"><a class="a-footer__link" href="#">Bolsa de trabajo</a>
-                                                    </li>
-                                                    <li class="p-0"><a class="a-footer__link" href="#">¿Quíenes somos?</a>
-                                                    </li>
-                                                    <li class="p-0"><a class="a-footer__link" href="#">Relación con Inversionistas</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </nav>
-                </div>
-                <div class="col-12 col-lg-4">
-                    <div class="row">
-                        <div class="col-12 pt-3 pt-lg-0 order-1"><a class="a-footer__boletin" href="#">Suscribete a nuestro Newsletter</a>
-                        </div>
-                        <div class="col-12 order-2 pt-3 text-center text-lg-left">
-                            <p class="a-footer__contact">Ventas por teléfono <a class="a-footer__contact" href="tel:52569999">5256-9999 </a><span> / </span><a class="a-footer__contact" href="tel:018007135555"> 01 800 713 5555</a>
-                            </p>
-                            <p class="a-footer__contact">Desde tu celular <a class="a-footer__contact" href="tel:*7171"> *7171</a>
-                            </p>
-                            <p class="a-footer__contact">Horario de nuestras tiendas: 11:00 a 21hrs Lun - Dom
-                            </p>
-                            <div class="text-center text-lg-left pt-3"><a class="a-footer__link" href="#">Blog Liverpool</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 pt-4 pt-lg-5">
-                    <hr>
+                <div class="d-flex flex-lg-row">
+                    <figure class="m-figure m-promoTwo px-2 d-none d-lg-block">
+                        <a href="#"><img class="a-promoTwo__img --hoverZoom" src="https://assets.liverpool.com.mx/assets/web/images/targeted_promotions/es/bpromo02a_190319beb.jpg" alt="Bebés, Cunas, Carriolas, Biberones,  Portabebés, Pañaleras, Niños, Accesorios para Bebés | Liverpool"
+                                title="Muebles para Bebé | Liverpool"></a>
+                    </figure>
+                    <figure class="m-figure m-promoTwo px-2 d-lg-none">
+                        <a href="#"><img class="a-promoTwo__img --hoverZoom" src=" https://assets.liverpool.com.mx/assets/web/images/targeted_promotions/es/bpromo02a_190319beb_m.jpg" alt="Bebés, Cunas, Carriolas, Biberones,  Portabebés, Pañaleras, Niños, Accesorios para Bebés | Liverpool"
+                                title="Muebles para Bebé | Liverpool"></a>
+                    </figure>
                 </div>
             </div>
-            <div class="row align-items-center">
-                <div class="col-12 col-lg-4 text-lg-left text-center order-1 pt-4 pb-2 pt-lg-3 pb-lg-3">
-                    <p class="a-footer__comments">Comentarios y sugerencias: <a class="a-footer__comments" href="mailto:atencion@liverpool.com.mx">atencion@liverpool.com.mx</a>
-                    </p>
+            <div class="container my-5">
+                <div class="d-flex flex-lg-row justify-content-center">
+                    <h2 class="a-promoTwo__title">Planea los outfits que te vas a llevar de viaje
+                    </h2>
                 </div>
-                <div class="col-12 col-lg-4 text-center order-2 pb-4 pb-lg-0"><a class="a-footer__disclaimers" href="#">Términos y condiciones</a><span class="a-footer__slash">/</span><a class="a-footer__disclaimers" href="#">Aviso de privacidad</a><span class="a-footer__slash">/</span><a class="a-footer__disclaimers"
-                        href="#">Mapa del sitio</a>
-                </div>
-                <div class="col-12 col-lg-4 text-lg-right text-center order-3 pb-4 pb-lg-0"><a class="a-footer__socialMedia" href="#"><i class="icon-facebook"></i></a><a class="a-footer__socialMedia" href="#"><i class="icon-twitter"></i></a><a class="a-footer__socialMedia" href="#"><i class="icon-instagram"></i></a>
+                <div class="d-flex flex-lg-row flex-column">
+                    <figure class="m-figure m-promoTwo px-2">
+                        <a href="#"><img class="a-promoTwo__img --hoverZoom" src="https://assets.liverpool.com.mx/assets/web/images/targeted_promotions/es/bpromo02b_190319lev.jpg" alt="Levis, Jeans, Levis México, Camisas, playeras, blusas, chamarra, Levis | Liverpool"
+                                title="Levi's | Liverpool"></a>
+                    </figure>
+                    <figure class="m-figure m-promoTwo px-2">
+                        <a href="#"><img class="a-promoTwo__img --hoverZoom" src="https://assets.liverpool.com.mx/assets/web/images/targeted_promotions/es/bpromo02c_190319via.jpg" alt="Viajes, Paquetes, Hoteles, Vuelos, Tours, Cruceros | Liverpool" title="Viajes | Liverpool"></a>
+                    </figure>
                 </div>
             </div>
-        </div>
-        <div class="container-fluid m-footer__misc">
-            <div class="col-12 col-lg-12 text-center">
-                <p class="a-footer__misc">Precio en rojo aplica el descuento más alto, las promociones pueden diferir de las publicadas en tienda.
-                </p>
-                <p class="a-footer__misc">2018 Liverpool / Todos los derechos reservados D.R. ®
-                </p>
+        </section>
+        <!--carousel-->
+        <section>
+            <div class="container my-5">
+                <div class="row carousel-heading justify-content-center">
+                    <div class="mb-5"><a href="">CÁMARAS HASTA 33% DE DESCUENTO<i class="icon-arrow_right"></i></a></div>
+                </div>
+                <div class="owl-carousel owl-theme owl-home">
+                    <div class="item"><img class="item-img" src="https://ss627.liverpool.com.mx/lg/1063581492.jpg"></div>
+                    <div class="item"><img class="item-img" src="https://ss627.liverpool.com.mx/lg/1048074444.jpg"></div>
+                    <div class="item"><img class="item-img" src="https://ss627.liverpool.com.mx/lg/1075048331.jpg"></div>
+                    <div class="item"><img class="item-img" src="https://ss627.liverpool.com.mx/lg/1075048323.jpg"></div>
+                    <div class="item"><img class="item-img" src="https://ss627.liverpool.com.mx/lg/1078740112.jpg"></div>
+                    <div class="item"><img class="item-img" src="https://ss627.liverpool.com.mx/lg/1071471566.jpg"></div>
+                    <div class="item"><img class="item-img" src="https://ss627.liverpool.com.mx/lg/1071471558.jpg"></div>
+                    <div class="item"><img class="item-img" src="https://ss627.liverpool.com.mx/lg/1030846881.jpg"></div>
+                </div>
             </div>
-        </div>
-    </footer>
-    <script type="text/javascript" src="../assets/lib/jquery-3.3.1/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="../assets/lib/bootstrap-4.2.1-dist/js/bootstrap.bundle.min.js"></script>
-    <script type="text/javascript" src="../assets/lib/jquery-menu-aim/jquery.menu-aim.js"></script>
-    <script type="text/javascript" src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script type="text/javascript" src="../assets/lib/OwlCarousel2-2.3.4/owl.carousel.min.js"></script>
-    <script type="text/javascript" src="../assets/js/carousel.js"></script>
-</body>
-
-</html>
+        </section>
+        <!--promo 3-->
+        <section class="o-promoThree">
+            <div class="container my-5">
+                <div class="d-flex flex-lg-row justify-content-center">
+                    <h2 class="a-promoThree__title">Prepárate para esa aventura
+                    </h2>
+                </div>
+                <div class="d-flex flex-lg-row flex-column">
+                    <figure class="m-figure m-promoThree px-2">
+                        <a href="#"><img class="a-promoThree__img --hoverZoom" src="https://assets.liverpool.com.mx/assets/web/images/targeted_promotions/es/bpromo03a_190319mot.jpg" alt="Motos, motocicletas, deportiva, moto de trabajo, Yamaha, Italika, Carabela, motocicletas en Liverpool"
+                                title="Motos | Liverpool"></a>
+                    </figure>
+                    <figure class="m-figure m-promoThree px-2">
+                        <a href="#"><img class="a-promoThree__img --hoverZoom" src="https://assets.liverpool.com.mx/assets/web/images/targeted_promotions/es/bpromo03b_190319eje.jpg" alt="Aparatos para hacer ejercicio, caminadora, bicicleta fija, mancuernas, escaladora, pack, aparatos ejercicio en Liverpool"
+                                title="Aparatos de Ejercicio | Liverpool"></a>
+                    </figure>
+                </div>
+                <div class="d-flex flex-lg-row flex-column">
+                    <figure class="m-figure m-promoThree px-2">
+                        <a href="#"><img class="a-promoThree__img --hoverZoom" src="https://assets.liverpool.com.mx/assets/web/images/targeted_promotions/es/bpromo03c_190319cel.jpg" alt="Celulares, Smartphones, Los mejores smartphones 2018, Motorola, Samsung, Huawei, Iphone, Fundas para celular, Celulares en Liverpool"
+                                title="Celulares | Liverpool"></a>
+                    </figure>
+                    <figure class="m-figure m-promoThree px-2">
+                        <a href="#"><img class="a-promoThree__img --hoverZoom" src="https://assets.liverpool.com.mx/assets/web/images/targeted_promotions/es/bpromo03d_190319com.jpg" alt="Laptops, HP, Lenovo, Laptop Gamer, Dell, Toshiba, Laptops | Liverpool" title="Computadoras | Liverpool"></a>
+                    </figure>
+                </div>
+            </div>
+        </section>
