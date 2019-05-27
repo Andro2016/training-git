@@ -1,5 +1,8 @@
  <!--central Banner Promo-->
  <style>
+	 body {
+		 background-color: #fff !important ;
+	 }
         .o-mainBanner{
             padding-left:0px;
             padding-right:0px;
@@ -36,63 +39,17 @@
 			margin-bottom: 20px;
         }
 	 .a-promoTwo__title {
-		 font-size: 18px;
+		 font-size: 20px;
 		 text-align: center;
+		 letter-spacing: 1.2px;
 	 }
 	 
         
         
       </style>
-        <section class="o-mainBanner">
-            <script>
-                {
-                    window.addEventListener('load', () => {
-                        try {
-                            let endDate = new Date("Mar 30, 2019 23:59:59").getTime();
-                            elDays = document.querySelector(".a-countDown__daysNumber");
-                            elHours = document.querySelector(".a-countDown__hoursNumber");
-                            elMinutes = document.querySelector(".a-countDown__minutesNumber");
-                            elSeconds = document.querySelector(".a-countDown__secondsNumber");
-                            operationsTime = () => {
-                                let nowaday = new Date().getTime();
-                                distanceBetweenDays = endDate - nowaday;
-                                days = Math.floor(distanceBetweenDays / (1000 * 60 * 60 * 24));
-                                hours = Math.floor((distanceBetweenDays % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                                minutes = Math.floor((distanceBetweenDays % (1000 * 60 * 60)) / (1000 * 60));
-                                seconds = Math.floor((distanceBetweenDays % (1000 * 60)) / 1000);
-                                if (distanceBetweenDays < 0) {
-                                    clearInterval(engineTime);
-                                    days = 0;
-                                    hours = 0;
-                                    minutes = 0;
-                                    seconds = 0;
-                                }
-                                return {
-                                    "days": days,
-                                    "hours": hours,
-                                    "minutes": minutes,
-                                    "seconds": seconds
-                                }
-                            }
-                            setDataTime = (d, h, m, s) => {
-                                elDays.innerHTML = d < 10 ? "0" + d : d;
-                                elHours.innerHTML = h < 10 ? "0" + h : h;
-                                elMinutes.innerHTML = m < 10 ? "0" + m : m;
-                                elSeconds.innerHTML = s < 10 ? "0" + s : s;
-                            }
-                            runTime = () => {
-                                let dataTime = operationsTime();
-                                setDataTime(dataTime.days, dataTime.hours, dataTime.minutes, dataTime.seconds);
-
-                            }
-                            let engineTime = setInterval(runTime, 1000);
-
-                        } catch (Exception) {
-                            console.log("time__fail");
-                        }
-                    });
-                }
-            </script>
+<!--inicio banner central
+-->        <section class="o-mainBanner">
+           
             <div class="o-mainBannerContent container-fluid px-0 position-relative">
                 <div class="o-mainBanner d-flex justify-content-center align-items-center my-0">
 
@@ -103,26 +60,10 @@
                                 title=""></a>
                     </figure>
                 </div>
-                <ul class="m-countDown">
-                    <li class="m-countDown__days">
-                        <div class="a-countDown__daysTitle">Días</div>
-                        <div class="a-countDown__daysNumber">00</div>
-                    </li>
-                    <li class="m-countDown__hours">
-                        <div class="a-countDown__hoursTitle">Horas</div>
-                        <div class="a-countDown__hoursNumber">00</div>
-                    </li>
-                    <li class="m-countDown__minutes">
-                        <div class="a-countDown__minutesTitle">Minutos</div>
-                        <div class="a-countDown__minutesNumber">00</div>
-                    </li>
-                    <li class="m-countDown__seconds">
-                        <div class="a-countDown__secondsTitle">Segundos</div>
-                        <div class="a-countDown__secondsNumber">00</div>
-                    </li>
-                </ul>
             </div>
         </section>
+<!--fin banner central
+-->
         <!--carousel-->
         <section>
             <div class="container my-5">
@@ -141,6 +82,12 @@
                 </div>
             </div>
         </section>
+<!--inicio promos 01
+-->
+ <div class="d-flex flex-lg-row justify-content-center">
+                    <h2 class="a-promoTwo__title">NUNCA ES TARDE PARA  <b>PONERSE EN FORMA</b>
+                    </h2>
+                </div>
 <!--start 3 banners-->
       <section class="o-promoOne container"><a class="m-promoOne__link" href="#">
           <picture class="m-promoOne__picture">
@@ -154,7 +101,8 @@
 			  <img class="a-promoOne__image lazy" src="http://172.22.234.234:2020/digital/liv/siteA/home/img/bpromo01c_200519bic.jpg" alt="Ropa, Zapatos, Sacos, Camisas, Trajes, Ropa Interior, Jeans, Polos para Caballeros | Liverpool" title="Colchones| Liverpool"></picture></a></section>
       <!--end 3 banners-->
 
-
+<!--fin promos 01
+-->
         
         <!--carousel-->
         <section>
@@ -174,40 +122,28 @@
                 </div>
             </div>
         </section>
-        <!--promo 2-->
+
+        <!--inicio promos 02
+-->
         <section class="o-promoTwo">
+           
+			<!--videos-->
             <div class="container my-5">
                 <div class="d-flex flex-lg-row justify-content-center">
-                    <h2 class="a-promoTwo__title">Decora el cuarto de tu bebé
-                    </h2>
-                </div>
-                <div class="d-flex flex-lg-row">
-                    <figure class="m-figure m-promoTwo px-2 d-none d-lg-block">
-                        <a href="#"><img class="a-promoTwo__img --hoverZoom" src="http://172.22.234.234:2020/digital/liv/siteA/home/img/bpromo02a_190319beb.jpg" alt="Bebés, Cunas, Carriolas, Biberones,  Portabebés, Pañaleras, Niños, Accesorios para Bebés | Liverpool"
-                                title="Muebles para Bebé | Liverpool"></a>
-                    </figure>
-                    <figure class="m-figure m-promoTwo px-2 d-lg-none">
-                        <a href="#"><img class="a-promoTwo__img --hoverZoom" src=" http://172.22.234.234:2020/digital/liv/siteA/home/img/bpromo02a_190319beb_m.jpg" alt="Bebés, Cunas, Carriolas, Biberones,  Portabebés, Pañaleras, Niños, Accesorios para Bebés | Liverpool"
-                                title="Muebles para Bebé | Liverpool"></a>
-                    </figure>
-                </div>
-            </div>
-            <div class="container my-5">
-                <div class="d-flex flex-lg-row justify-content-center">
-                    <h2 class="a-promoTwo__title">Planea los outfits que te vas a llevar de viaje
+                    <h2 class="a-promoTwo__title">PLANEA LOS OUTFITS DE TU <b>DÍA A DÍA</b>
                     </h2>
                 </div>
                 <div class="d-flex flex-lg-row flex-column">
-                    <figure class="m-figure m-promoTwo px-2">
-                        <a href="#"><img class="a-promoTwo__img --hoverZoom" src="http://172.22.234.234:2020/digital/liv/siteA/home/img/bpromo02c_110519zap.jpg" alt="Levis, Jeans, Levis México, Camisas, playeras, blusas, chamarra, Levis | Liverpool"
-                                title="Levi's | Liverpool"></a>
-                    </figure>
-                    <figure class="m-figure m-promoTwo px-2">
-                        <a href="#"><img class="a-promoTwo__img --hoverZoom" src="http://172.22.234.234:2020/digital/liv/siteA/home/img/bpromo02d_110519rel.jpg" alt="Viajes, Paquetes, Hoteles, Vuelos, Tours, Cruceros | Liverpool" title="Viajes | Liverpool"></a>
-                    </figure>
+<video autoplay="autoplay" loop="" muted="" preload="auto" id="videoBanner" height="400" poster="https://assets.liverpool.com.mx/assets/web/images/targeted_promotions/es/bpromo02b_260519ella.jpg" style="object-fit: cover; width: 100%" alt="Ella, Zapatos, Bolsas, Vestidos, Accesorios, Tacones, Curvy, Petite, Ropa de Mujer | Liverpool" title="Ella - HOT SALE | Liverpool">
+ 
+ <source src="https://assets.liverpool.com.mx/assets/web/images/targeted_promotions/es/bpromo02b_260519ella.mp4" type="video/mp4">
+</video>
                 </div>
             </div>
         </section>
+
+ <!--fin promos 02
+-->
         <!--carousel-->
         <section>
             <div class="container my-5">
@@ -226,11 +162,11 @@
                 </div>
             </div>
         </section>
-        <!--promo 3-->
+        <!-- incio promo 3-->
         <section class="o-promoThree">
             <div class="container my-5">
                 <div class="d-flex flex-lg-row justify-content-center">
-                    <h2 class="a-promoThree__title">Prepárate para esa aventura
+                    <h2 class="a-promoThree__title">ES HORA DE RECORDAR Y <b>FESTEJAR TU GRAN NOCHE</b>
                     </h2>
                 </div>
                 <div class="d-flex flex-lg-row flex-column">
