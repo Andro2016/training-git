@@ -59,6 +59,18 @@
         justify-content: center;
     }
     
+    .a-promoVideo__video {
+        width: 100%;
+    }
+    
+    .a-promoVideo__link:first-child {
+        padding-right: 15px;
+    }
+    
+    .a-promoVideo__link:last-child {
+        padding-left: 15px;
+    }
+    
     .a-promoAll__title {
         font-size: 20px;
         text-align: center;
@@ -69,6 +81,12 @@
     @media (max-width: 991px) {
         .m-promoVideo__container {
             flex-flow: column;
+        }
+        .a-promoVideo__link:first-child {
+            padding-right: 0px;
+        }
+        .a-promoVideo__link:last-child {
+            padding-left: 0px;
         }
         .m-countDown {
             list-style-type: none;
@@ -135,16 +153,13 @@
 <!--inicio banner central
 -->
 <section class="o-mainBanner">
-
-    <div class="o-mainBannerContent container-fluid px-0 position-relative">
-        <div class="o-mainBanner d-flex justify-content-center align-items-center my-0">
-            <div class="m-banner-main m-centralBanner__promo d-none d-lg-block" style="background:url('http://172.22.234.234:2020/digital/liv/siteA/home/img/bc_110519lin.jpg') no-repeat center center; width:100%; height:450px; "></div>
-            <figure class="m-figure m-centralBanner__promo d-lg-none">
-                <a href="#"><img class="a-centralBanner__img img-fluid" src="http://172.22.234.234:2020/digital/liv/siteA/home/img/bc_110519lin_m.jpg" alt="Liverpool.com.mx es la Tienda online con la selección más grande en Moda, Ropa, Zapatos, Tecnología, Laptops, Celulares, Juguetes, Muebles, Línea blanca y mucho más. Envío Gratis"
-                        title=""></a>
-            </figure>
-        </div>
-    </div>
+    <a class="m-mainBanner__link" href="#">
+        <picture class="m-mainBanner__picture">
+            <source class="a-mainBanner__source" media="(max-width: 991px)" srcset="http://172.22.234.234:2020/digital/liv/siteA/home/img/bc_110519lin_m.jpg">
+            <source class="a-mainBanner__source" media="(min-width: 992px)" srcset="http://172.22.234.234:2020/digital/liv/siteA/home/img/bc_110519lin.jpg"><img class="a-mainBanner__image lazy" src="https://assets.liverpool.com.mx/assets/web/images/targeted_promotions/es/bc_080419jug_sales.jpg" alt="Liverpool.com.mx es la Tienda online con la selección más grande en Moda, Ropa, Zapatos, Tecnología, Laptops, Celulares, Juguetes, Muebles, Línea blanca y mucho más. Envío Gratis"
+                title="">
+        </picture>
+    </a>
 </section>
 <!--fin banner central
 -->
@@ -218,15 +233,15 @@
 -->
 <section class="o-promoVideo container">
     <div class="m-promoVideo__title">
-        <h2 class="a-promoVideo__title">Decora el cuarto de tu bebé</h2>
+        <h2 class="a-promoAll__title">Decora el cuarto de tu bebé</h2>
     </div>
     <div class="m-promoVideo__content">
-        <div class="container m-promoVideo__container">
-            <a href="">
+        <div class="container-fluid m-promoVideo__container">
+            <a href="" class="a-promoVideo__link">
                 <video class="a-promoVideo__video" src="http://172.22.234.234:3030/digital/liv/siteA/home/vid/brpomos02b_el.mp4" autoplay="autoplay" loop="" muted="" preload="auto" id="videoBanner" height="400" poster="https://assets.liverpool.com.mx/assets/web/images/targeted_promotions/es/bpromo02b_260519ella.jpg"
                     alt="Ella, Zapatos, Bolsas, Vestidos, Accesorios, Tacones, Curvy, Petite, Ropa de Mujer | Liverpool" title="Ella - HOT SALE | Liverpool"></video></a>
-            <a href="">
-                <video class="a-promoVideo__video" src="http://172.22.234.234:3030/digital/liv/siteA/home/vid/brpomos02b_el.mp4" autoplay="autoplay" loop="" muted="" preload="auto" id="videoBanner" height="400" poster="https://assets.liverpool.com.mx/assets/web/images/targeted_promotions/es/bpromo02b_260519ella.jpg"
+            <a href="" class="a-promoVideo__link">
+                <video class="a-promoVideo__video" src="http://172.22.234.234:3030/digital/liv/siteA/home/vid/brpomos02b_ella.mp4" autoplay="autoplay" loop="" muted="" preload="auto" id="videoBanner" height="400" poster="https://assets.liverpool.com.mx/assets/web/images/targeted_promotions/es/bpromo02b_260519ella.jpg"
                     alt="Ella, Zapatos, Bolsas, Vestidos, Accesorios, Tacones, Curvy, Petite, Ropa de Mujer | Liverpool" title="Ella - HOT SALE | Liverpool"></video></a>
         </div>
     </div>
